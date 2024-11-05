@@ -1,27 +1,27 @@
 /* Monoplex CSS Framework */
-/* Version 1.1.0 - Night Theme */
+/* Version 1.1.2 - Night Theme */
 
 :root {
-    --monoplex-bg: #121212;
-    --monoplex-surface: #1e1e1e;
-    --monoplex-surface-2: #242424;
-    --monoplex-text: #e0e0e0;
-    --monoplex-text-muted: #8a8a8a;
-    --monoplex-primary: #7fdbff;
-    --monoplex-secondary: #ff7fbf;
-    --monoplex-accent: #7fff7f;
-    --monoplex-muted: #404040;
+    --monoplex-bg: #1a1a1a;
+    --monoplex-surface: #242424;
+    --monoplex-surface-2: #2a2a2a;
+    --monoplex-text: #d0d0d0;
+    --monoplex-text-muted: #909090;
+    --monoplex-primary: #6ba7c7;
+    --monoplex-secondary: #c76ba7;
+    --monoplex-accent: #6bc76b;
+    --monoplex-muted: #484848;
   
-    --monoplex-primary-light: #a0e6ff;
-    --monoplex-primary-dark: #4fa8cc;
-    --monoplex-secondary-light: #ffb3d9;
-    --monoplex-secondary-dark: #cc5c99;
-    --monoplex-accent-light: #b3ffb3;
-    --monoplex-accent-dark: #4ccc4c;
+    --monoplex-primary-light: #8abcd8;
+    --monoplex-primary-dark: #4d7d96;
+    --monoplex-secondary-light: #d88abc;
+    --monoplex-secondary-dark: #964d7d;
+    --monoplex-accent-light: #8ad88a;
+    --monoplex-accent-dark: #4d964d;
   
-    --monoplex-gradient-1: linear-gradient(135deg, #7fdbff, #4fa8cc);
-    --monoplex-gradient-2: linear-gradient(135deg, #ff7fbf, #cc5c99);
-    --monoplex-gradient-3: linear-gradient(135deg, #7fff7f, #4ccc4c);
+    --monoplex-gradient-1: linear-gradient(135deg, #6ba7c7, #4d7d96);
+    --monoplex-gradient-2: linear-gradient(135deg, #c76ba7, #964d7d);
+    --monoplex-gradient-3: linear-gradient(135deg, #6bc76b, #4d964d);
   
     --monoplex-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --monoplex-font-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -36,16 +36,16 @@
     --monoplex-size-10: 4rem;
     --monoplex-size-12: 6rem;
   
-    --monoplex-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    --monoplex-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+    --monoplex-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --monoplex-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.4);
   
     --monoplex-blur-sm: blur(4px);
     --monoplex-blur: blur(8px);
     --monoplex-blur-lg: blur(16px);
   
-    --monoplex-primary-glow: 0 0 20px rgba(127, 219, 255, 0.2);
-    --monoplex-secondary-glow: 0 0 20px rgba(255, 127, 191, 0.2);
-    --monoplex-accent-glow: 0 0 20px rgba(127, 255, 127, 0.2);
+    --monoplex-primary-glow: 0 0 15px rgba(107, 167, 199, 0.15);
+    --monoplex-secondary-glow: 0 0 15px rgba(199, 107, 167, 0.15);
+    --monoplex-accent-glow: 0 0 15px rgba(107, 199, 107, 0.15);
   
     --monoplex-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --monoplex-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
@@ -372,7 +372,7 @@
   }
   
   .table tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.03);
   }
   
   .alert {
@@ -386,19 +386,19 @@
   }
   
   .alert-primary {
-    background-color: rgba(109, 93, 252, 0.2);
+    background-color: rgba(107, 167, 199, 0.1);
     border: 1px solid var(--monoplex-primary);
     color: var(--monoplex-primary-light);
   }
   
   .alert-secondary {
-    background-color: rgba(46, 204, 113, 0.2);
+    background-color: rgba(199, 107, 167, 0.1);
     border: 1px solid var(--monoplex-secondary);
     color: var(--monoplex-secondary-light);
   }
   
   .alert-accent {
-    background-color: rgba(231, 76, 60, 0.2);
+    background-color: rgba(107, 199, 107, 0.1);
     border: 1px solid var(--monoplex-accent);
     color: var(--monoplex-accent-light);
   }
@@ -1049,27 +1049,24 @@
   .text-neon {
     color: var(--monoplex-primary);
     text-shadow: 
-        0 0 7px var(--monoplex-primary),
-        0 0 10px var(--monoplex-primary),
-        0 0 21px var(--monoplex-primary),
-        0 0 42px var(--monoplex-primary);
+        0 0 5px var(--monoplex-primary),
+        0 0 8px var(--monoplex-primary),
+        0 0 15px var(--monoplex-primary);
     animation: neon-pulse 1.5s ease-in-out infinite alternate;
   }
   
   @keyframes neon-pulse {
     from {
       text-shadow: 
-          0 0 7px var(--monoplex-primary),
-          0 0 10px var(--monoplex-primary),
-          0 0 21px var(--monoplex-primary),
-          0 0 42px var(--monoplex-primary);
+          0 0 5px var(--monoplex-primary),
+          0 0 8px var(--monoplex-primary),
+          0 0 15px var(--monoplex-primary);
     }
     to {
       text-shadow: 
-          0 0 14px var(--monoplex-primary),
-          0 0 20px var(--monoplex-primary),
-          0 0 42px var(--monoplex-primary),
-          0 0 84px var(--monoplex-primary);
+          0 0 10px var(--monoplex-primary),
+          0 0 15px var(--monoplex-primary),
+          0 0 25px var(--monoplex-primary);
     }
   }
   
