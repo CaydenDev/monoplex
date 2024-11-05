@@ -5,7 +5,7 @@ You will only need to add the following to your HTML file:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CaydenDev/monoplex@main/monoplex.css">
 ```
 
-Example:
+**Example:**
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +15,11 @@ Example:
 </html>
 ```
 
-Here is an Example of the Framework in Action:
+**Example:** 
 [Example-Webpage](https://caydendev.github.io/sites/monoplex-demo.html?#)
 
 
-More coming soon!
+
+**jsDelivr Links:**
+[Monoplex-Icons](https://cdn.jsdelivr.net/gh/CaydenDev/monoplex@main/monoplex-icons.css)
+[Monoplex-CSS](https://cdn.jsdelivr.net/gh/CaydenDev/monoplex@main/monoplex.css)
