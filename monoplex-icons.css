@@ -1,0 +1,53 @@
+/* Monoplex Icon System */
+
+.icon-system {
+  --icon-size: 24px;
+  --icon-color: currentColor;
+}
+
+.icon-sm { --icon-size: 16px; }
+.icon-md { --icon-size: 24px; }
+.icon-lg { --icon-size: 32px; }
+.icon-xl { --icon-size: 48px; }
+
+.icon-container {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+}
+
+.icon-spin {
+  animation: spin 2s linear infinite;
+}
+
+.icon-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.icon-glow {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.icon-btn-round {
+  border-radius: 50%;
+  width: calc(var(--icon-size) * 1.5);
+  height: calc(var(--icon-size) * 1.5);
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.icon-btn-round:hover {
+  transform: scale(1.1);
+  box-shadow: var(--monoplex-primary-glow);
+} 
