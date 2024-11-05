@@ -2,24 +2,26 @@
 /* Version 1.1.0 - Night Theme */
 
 :root {
-    --monoplex-bg: #0a0a0a;
-    --monoplex-surface: #1a1a1a;
-    --monoplex-text: #e0e0e0;
-    --monoplex-text-muted: #a0a0a0;
-    --monoplex-primary: #6d5dfc;
-    --monoplex-secondary: #2ecc71;
-    --monoplex-accent: #e74c3c;
-    --monoplex-muted: #7f8c8d;
+    --monoplex-bg: #0f172a;
+    --monoplex-surface: #1e293b;
+    --monoplex-surface-2: #334155;
+    --monoplex-text: #f1f5f9;
+    --monoplex-text-muted: #94a3b8;
+    --monoplex-primary: #8b5cf6;
+    --monoplex-secondary: #10b981;
+    --monoplex-accent: #f43f5e;
+    --monoplex-muted: #64748b;
   
-    --monoplex-primary-light: #8f7ffd;
-    --monoplex-primary-dark: #4c3ddc;
-    --monoplex-secondary-light: #52e093;
-    --monoplex-secondary-dark: #27ae60;
-    --monoplex-accent-light: #eb6b5e;
-    --monoplex-accent-dark: #c0392b;
+    --monoplex-primary-light: #a78bfa;
+    --monoplex-primary-dark: #7c3aed;
+    --monoplex-secondary-light: #34d399;
+    --monoplex-secondary-dark: #059669;
+    --monoplex-accent-light: #fb7185;
+    --monoplex-accent-dark: #e11d48;
   
-    --monoplex-gradient-1: linear-gradient(135deg, var(--monoplex-primary), var(--monoplex-secondary));
-    --monoplex-gradient-2: linear-gradient(135deg, var(--monoplex-accent), var(--monoplex-primary));
+    --monoplex-gradient-1: linear-gradient(135deg, #8b5cf6, #6366f1);
+    --monoplex-gradient-2: linear-gradient(135deg, #f43f5e, #8b5cf6);
+    --monoplex-gradient-3: linear-gradient(135deg, #10b981, #6366f1);
   
     --monoplex-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --monoplex-font-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -34,10 +36,14 @@
     --monoplex-size-10: 4rem;
     --monoplex-size-12: 6rem;
   
-    --monoplex-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --monoplex-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --monoplex-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --monoplex-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --monoplex-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.15);
+    --monoplex-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --monoplex-shadow-md: 0 8px 12px -3px rgb(0 0 0 / 0.25), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --monoplex-shadow-lg: 0 15px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+    --monoplex-blur-sm: blur(4px);
+    --monoplex-blur: blur(8px);
+    --monoplex-blur-lg: blur(16px);
   }
   
   *, *::before, *::after {
@@ -133,13 +139,24 @@
   .btn {
     display: inline-block;
     padding: var(--monoplex-size-2) var(--monoplex-size-4);
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: var(--monoplex-size-4);
+    border-radius: 0.5rem;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0));
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .btn:hover::after {
+    opacity: 1;
   }
   
   .btn:hover {
@@ -202,33 +219,33 @@
   .form-control {
     display: block;
     width: 100%;
-    padding: var(--monoplex-size-2);
+    padding: var(--monoplex-size-3);
     font-size: var(--monoplex-size-4);
     line-height: 1.5;
     color: var(--monoplex-text);
-    background-color: var(--monoplex-surface);
-    border: 1px solid #444;
-    border-radius: 0.25rem;
-    transition: all 0.3s ease;
+    background-color: var(--monoplex-surface-2);
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
   }
   
   .form-control:focus {
-    outline: none;
     border-color: var(--monoplex-primary);
-    box-shadow: 0 0 0 2px rgba(109, 93, 252, 0.25);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    outline: none;
   }
   
   .card {
     background-color: var(--monoplex-surface);
-    border-radius: 0.5rem;
-    padding: var(--monoplex-size-4);
-    margin-bottom: var(--monoplex-size-4);
-    box-shadow: var(--monoplex-shadow);
-    transition: all 0.3s ease;
+    border: 1px solid var(--monoplex-surface-2);
+    border-radius: 1rem;
+    padding: var(--monoplex-size-5);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow: var(--monoplex-shadow-lg);
   }
   
@@ -282,6 +299,8 @@
     border-collapse: separate;
     border-spacing: 0;
     margin-bottom: var(--monoplex-size-4);
+    border-radius: 0.5rem;
+    overflow: hidden;
   }
   
   .table th,
@@ -293,7 +312,10 @@
   
   .table th {
     font-weight: 600;
-    background-color: var(--monoplex-surface);
+    background-color: var(--monoplex-surface-2);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
   }
   
   .table tbody tr {
@@ -309,6 +331,9 @@
     border-radius: 0.25rem;
     margin-bottom: var(--monoplex-size-4);
     animation: slideIn 0.3s ease-out;
+    border-left: 4px solid;
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: var(--monoplex-blur-sm);
   }
   
   .alert-primary {
@@ -426,8 +451,12 @@
   }
   
   @keyframes shimmer {
-    0% { background-position: -1000px 0; }
-    100% { background-position: 1000px 0; }
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
   }
   
   .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
@@ -448,10 +477,11 @@
   }
   
   .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 0.5rem;
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: var(--monoplex-blur);
+    -webkit-backdrop-filter: var(--monoplex-blur);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
   }
   
   .code {
@@ -464,8 +494,8 @@
   }
   
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
   
   ::-webkit-scrollbar-track {
@@ -473,12 +503,13 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 4px;
+    background: var(--monoplex-surface-2);
+    border-radius: 5px;
+    border: 2px solid var(--monoplex-surface);
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #777;
+    background: var(--monoplex-muted);
   }
   
   .switch {
@@ -648,4 +679,15 @@
   
   .dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .loading {
+    background: linear-gradient(
+      90deg,
+      var(--monoplex-surface) 25%,
+      var(--monoplex-surface-2) 50%,
+      var(--monoplex-surface) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
   }
