@@ -22,4 +22,4 @@ You will only need to add the following to your HTML file:
 
 **jsDelivr Links:**
 [Monoplex-Icons](https://cdn.jsdelivr.net/gh/CaydenDev/monoplex@main/monoplex-icons.css)
-[Monoplex-CSS](https://cdn.jsdelivr.net/gh/CaydenDev/monoplex@main/monoplex.css)
+[Monoplex-CSS](https://cdn.jsdelivr.net/gh/CaydenDev/monoplex@main/monoplex-1.1.0.css)
