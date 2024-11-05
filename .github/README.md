@@ -1,7 +1,6 @@
 # Monoplex CSS Framework
 
 ![Monoplex CSS](https://img.shields.io/badge/Monoplex-1.1.3-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 Monoplex is a modern, dark-themed CSS framework designed for creating sleek and sophisticated user interfaces. It features a comprehensive design system with built-in animations, modern effects, and responsive utilities.
 
