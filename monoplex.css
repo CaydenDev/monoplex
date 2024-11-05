@@ -2,15 +2,15 @@
 /* Version 1.1.0 - Night Theme */
 
 :root {
-    --monoplex-bg: #0f172a;
-    --monoplex-surface: #1e293b;
-    --monoplex-surface-2: #334155;
-    --monoplex-text: #f1f5f9;
-    --monoplex-text-muted: #94a3b8;
-    --monoplex-primary: #8b5cf6;
-    --monoplex-secondary: #10b981;
-    --monoplex-accent: #f43f5e;
-    --monoplex-muted: #64748b;
+    --monoplex-bg: #000000;
+    --monoplex-surface: #0a0a0a;
+    --monoplex-surface-2: #111111;
+    --monoplex-text: #ffffff;
+    --monoplex-text-muted: #666666;
+    --monoplex-primary: #00ffff;
+    --monoplex-secondary: #ff00ff;
+    --monoplex-accent: #00ff00;
+    --monoplex-muted: #333333;
   
     --monoplex-primary-light: #a78bfa;
     --monoplex-primary-dark: #7c3aed;
@@ -19,9 +19,9 @@
     --monoplex-accent-light: #fb7185;
     --monoplex-accent-dark: #e11d48;
   
-    --monoplex-gradient-1: linear-gradient(135deg, #8b5cf6, #6366f1);
-    --monoplex-gradient-2: linear-gradient(135deg, #f43f5e, #8b5cf6);
-    --monoplex-gradient-3: linear-gradient(135deg, #10b981, #6366f1);
+    --monoplex-gradient-1: linear-gradient(135deg, #00ffff, #0099ff);
+    --monoplex-gradient-2: linear-gradient(135deg, #ff00ff, #ff0099);
+    --monoplex-gradient-3: linear-gradient(135deg, #00ff00, #99ff00);
   
     --monoplex-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --monoplex-font-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -36,14 +36,16 @@
     --monoplex-size-10: 4rem;
     --monoplex-size-12: 6rem;
   
-    --monoplex-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.15);
-    --monoplex-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --monoplex-shadow-md: 0 8px 12px -3px rgb(0 0 0 / 0.25), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --monoplex-shadow-lg: 0 15px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --monoplex-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    --monoplex-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.9);
   
     --monoplex-blur-sm: blur(4px);
     --monoplex-blur: blur(8px);
     --monoplex-blur-lg: blur(16px);
+  
+    --monoplex-primary-glow: 0 0 20px rgba(0, 255, 255, 0.3);
+    --monoplex-secondary-glow: 0 0 20px rgba(255, 0, 255, 0.3);
+    --monoplex-accent-glow: 0 0 20px rgba(0, 255, 0, 0.3);
   }
   
   *, *::before, *::after {
@@ -137,13 +139,21 @@
   .text-muted { color: var(--monoplex-text-muted); }
   
   .btn {
-    display: inline-block;
-    padding: var(--monoplex-size-2) var(--monoplex-size-4);
+    background: var(--monoplex-surface);
+    border: 1px solid var(--monoplex-primary);
+    color: var(--monoplex-primary);
+    padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s;
     position: relative;
     overflow: hidden;
+  }
+  
+  .btn:hover {
+    box-shadow: var(--monoplex-primary-glow);
+    background: var(--monoplex-primary);
+    color: var(--monoplex-surface);
   }
   
   .btn::after {
@@ -157,11 +167,6 @@
   
   .btn:hover::after {
     opacity: 1;
-  }
-  
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--monoplex-shadow-md);
   }
   
   .btn:active {
@@ -217,36 +222,50 @@
   }
   
   .form-control {
-    display: block;
-    width: 100%;
-    padding: var(--monoplex-size-3);
-    font-size: var(--monoplex-size-4);
-    line-height: 1.5;
+    background: var(--monoplex-surface);
+    border: 1px solid var(--monoplex-surface-2);
     color: var(--monoplex-text);
-    background-color: var(--monoplex-surface-2);
-    border: 2px solid transparent;
+    padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    transition: all 0.2s ease;
+    transition: all 0.3s;
   }
   
   .form-control:focus {
     border-color: var(--monoplex-primary);
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    box-shadow: var(--monoplex-primary-glow);
     outline: none;
   }
   
   .card {
     background-color: var(--monoplex-surface);
     border: 1px solid var(--monoplex-surface-2);
-    border-radius: 1rem;
+    border-radius: 0.75rem;
     padding: var(--monoplex-size-5);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
   }
   
   .card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--monoplex-shadow-lg);
+    transform: translateY(-4px);
+    box-shadow: var(--monoplex-primary-glow);
+    border-color: var(--monoplex-primary);
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--monoplex-gradient-1);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
   }
   
   .card-title {
@@ -260,7 +279,9 @@
   }
   
   .navbar {
-    background-color: var(--monoplex-surface);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--monoplex-surface-2);
     padding: var(--monoplex-size-4) 0;
     box-shadow: var(--monoplex-shadow);
   }
@@ -299,8 +320,9 @@
     border-collapse: separate;
     border-spacing: 0;
     margin-bottom: var(--monoplex-size-4);
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     overflow: hidden;
+    background: var(--monoplex-surface);
   }
   
   .table th,
@@ -477,10 +499,9 @@
   }
   
   .glass {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: var(--monoplex-blur);
-    -webkit-backdrop-filter: var(--monoplex-blur);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
   }
   
@@ -494,8 +515,7 @@
   }
   
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
   }
   
   ::-webkit-scrollbar-track {
@@ -504,12 +524,11 @@
   
   ::-webkit-scrollbar-thumb {
     background: var(--monoplex-surface-2);
-    border-radius: 5px;
-    border: 2px solid var(--monoplex-surface);
+    border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--monoplex-muted);
+    background: var(--monoplex-primary);
   }
   
   .switch {
@@ -682,12 +701,22 @@
   }
   
   .loading {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(
       90deg,
-      var(--monoplex-surface) 25%,
-      var(--monoplex-surface-2) 50%,
-      var(--monoplex-surface) 75%
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
     );
-    background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
   }
